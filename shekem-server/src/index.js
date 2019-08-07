@@ -27,6 +27,7 @@ io.on("connection", socket => {
     });
     socket.on("getRecordsForMonth", month => {
         socket.emit("sendRecordsForMonth", purchaseRecords[month]);
+        console.log("Sent over purchase records for " + month);
     });
 });
 

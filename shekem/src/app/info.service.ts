@@ -16,6 +16,7 @@ export class InfoService {
     this.socket = io('http://localhost:4444');
     this.socket.on("sendRecordsForMonth", purchaseRecords => {
       this.purchaseRecords = purchaseRecords;
+      console.log(purchaseRecords);
     });
     this.socket.on("newRecord", record => {
       if (record.date.slice(3) === this.month) {
