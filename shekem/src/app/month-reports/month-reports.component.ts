@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { PurchaseRecord } from 'src/app/purchase_record';
 import { InfoService } from 'src/app/info.service';
 
@@ -8,7 +8,7 @@ import { InfoService } from 'src/app/info.service';
   styleUrls: ['./month-reports.component.css']
 })
 export class MonthReportsComponent implements OnInit {
-  month: string;
+  @Input() month: string = '01.2019';
   previous_sum: number;
   crew_num: number;
   budget: number;
@@ -17,8 +17,8 @@ export class MonthReportsComponent implements OnInit {
   constructor(private infoService: InfoService) {
   } 
 
-  getInfo(): void {
-    this.infoService.getRecords().subscribe(records => this.records = records);
+  getInfo() {
+    this.infoService.getRecordsForMonth(this.month).subscribe(records => this.records = records);
   }
 
   ngOnInit() {
