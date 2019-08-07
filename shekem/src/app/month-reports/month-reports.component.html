@@ -1,0 +1,52 @@
+<div class="jumbotron text-center">
+    <h1>דוחות חודשיים</h1>
+    <p>Resize this responsive page to see the effect!</p> 
+</div>
+      
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+        <h3>Column 1</h3>
+        <p>Lorem ipsum dolor..</p>
+        </div>
+        <div class="col-sm-4">
+        <h3>Column 2</h3>
+        <p>Lorem ipsum dolor..</p>
+        </div>
+        <div class="col-sm-4">
+        <h3>Column 3</h3> 
+        <p>Lorem ipsum dolor..</p>
+        </div>
+    </div>
+</div>
+
+<table class="table">
+        <thead>
+          <tr>
+            <th scope="col">סכום סופי</th>
+            <th scope="col">אמצעי תשלום</th>
+            <th scope="col">שם המוצר</th>
+            <th scope="col">תאריך</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let record of records">
+          <tr>
+            <th scope="row">{{record.finalSum}}</th>
+            <td>{{record.paymentVia}}</td>
+            <td>{{record.itemName}}</td>
+            <td>{{record.date}}</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
