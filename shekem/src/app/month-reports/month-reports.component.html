@@ -1,6 +1,5 @@
 <div class="jumbotron text-center">
     <h1>דוחות חודשיים</h1>
-    <p>Resize this responsive page to see the effect!</p> 
 </div>
       
 <div class="container">
@@ -32,21 +31,11 @@
         <tbody *ngFor="let record of records">
           <tr>
             <th scope="row">{{record.finalSum}}</th>
-            <td>{{record.paymentVia}}</td>
+            <td>{{record.paidVia}}</td>
             <td>{{record.itemName}}</td>
             <td>{{record.date}}</td>
           </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
         </tbody>
-      </table>
+</table>
+
+<div><button (click)="getInfo()">עדכן חודש</button></div>
