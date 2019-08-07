@@ -1,7 +1,14 @@
 <div class="jumbotron text-center">
     <h1>דוחות חודשיים</h1>
+    <div>
+      <input [(ngModel)]="month" placeholder="חודש נוכחי" type="text" class="form-control" style="text-align: right"/>
+    </div>
+    <div>
+    <button (click)="getInfo()" type="button" class="btn btn-primary">עדכן חודש</button>
+    </div>
 </div>
-      
+
+
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
@@ -37,5 +44,3 @@
           </tr>
         </tbody>
 </table>
-
-<div><button (click)="getInfo()">עדכן חודש</button></div>
