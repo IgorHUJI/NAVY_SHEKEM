@@ -2,81 +2,21 @@
     <h1 class = .>שעות פעילות</h1>
     <table>
         <tr>
-            <th>שעה</th>
+            <th>שעות</th>
             <th>יום</th>
         </tr>
-
-        <tr>
-            <td><input type="text"/></td>
-            <td>א</td>
-        </tr>
-
-        <tr>
-            <td><input type="text"/></td>
-            <td>ב</td>
-        </tr>
-
-        <tr>
-            <td><input type="text"/></td>
-            <td>ג</td>
-
-        </tr>
-
-        <tr>
-            <td><input type="text"/></td>
-            <td>ד</td>
-        </tr>
-
-        <tr>
-            <td><input type="text"/></td>
-            <td>ה</td>
-        </tr>
-
-        <tr>
-            <td><input type="text"/></td>
-            <td>ו</td>
-        </tr>
-
-        <tr>
-            <td><input type="text"/></td>
-            <td>ש</td>
-        </tr>
+        <tbody *ngFor="let day of days">
+            <tr>
+                <td><input type="text" [(ngModel)]="day.operatingHours"/>{{day.operatingHours}}</td>
+                <td>{{day.letter}}</td>
+            </tr>
+        </tbody>
     </table>
 
     <h1>אחראי שקם </h1>
     <table>
         <tr>
-            <td><input type="text"/></td>
-            <td>א</td>
-        </tr>
-
-        <tr>
-            <td><input type="text"/></td>
-            <td>ב</td>
-        </tr>
-
-        <tr>
-            <td><input type="text"/></td>
-            <td>ג</td>
-        </tr>
-
-        <tr>
-            <td><input type="text"/></td>
-            <td>ד</td>
-        </tr>
-
-        <tr>
-            <td><input type="text"/></td>
-            <td>ה</td>
-        </tr>
-
-        <tr>
-            <td><input type="text"/></td>
-            <td>ו</td>
-        </tr>
-
-        <tr>
-            <td><input type="text"/></td>
-            <td>ש</td>
+            <td><input type="text" [(ngModel)]="day.responsible"/>{{day.responsible}}</td>
+            <td>{{day.letter}}</td>
         </tr>
     </table>
