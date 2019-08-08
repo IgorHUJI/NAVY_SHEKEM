@@ -3,6 +3,8 @@ const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
 var purchaseRecords = {};
+var stock = {};
+
 const port = 4444;
 console.log("Server went up.");
 
@@ -23,12 +25,17 @@ io.on("connection", socket => {
         } else {
             purchaseRecords[month] = [record];
         }
-        socket.broadcast.emit("newRecord", record);
+        io.emit("newRecord", record);
     });
     socket.on("getRecordsForMonth", month => {
         socket.emit("sendRecordsForMonth", purchaseRecords[month]);
         console.log("Sent over purchase records for " + month);
     });
+    socket.on("addProduct", (product, quantity) => {
+        stock[product] = quantity;
+        io.emit("addedProduct", (product, quantity));
+    });
+    
 });
 
 http.listen(port);

@@ -15,6 +15,10 @@ export class MonthReportsComponent implements OnInit {
   records: PurchaseRecord[];
 
   constructor(private infoService: InfoService) {
+    infoService.socket.on("sendRecordsForMonth", purchaseRecords => {
+      this.records = purchaseRecords;
+      console.log(purchaseRecords);
+    });
   } 
 
   getInfo() {
