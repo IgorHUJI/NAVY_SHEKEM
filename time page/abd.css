@@ -36,12 +36,15 @@ th {
    color:oldlace ; 
    background-color: #00004d;
    font-weight: 600;
-   /*rgb(0, 0, 77)
-   hsl(240, 100%, 15%); */
    font-size: 60px;
    height: auto;
 }
 
 .navy-color {
     background-color: #00004d; 
+}
+
+.navy-logo {
+    width: "25%";
+    height: "15%";
 }
