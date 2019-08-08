@@ -4,6 +4,10 @@
     margin: auto;
 }
 
+div > h4 {
+    color:red;
+}
+
 .carousel-inner {
     width: 500px;
     height: 500px;
